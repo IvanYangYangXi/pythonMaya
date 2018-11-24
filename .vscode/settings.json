@@ -1,0 +1,9 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/Applications/Autodesk/Maya2017/devkit/other/pymel/extras/completion/py",
+        "/Applications/Autodesk/Maya2017/Maya.app/Contents/Frameworks/Python.framework/⁨Versions⁩/2.7⁩/bin⁩",
+        "/Applications/Autodesk/Maya2017/Maya.app/Contents/Frameworks/Python.framework/⁨Versions⁩/2.7⁩/lib/python2.7",
+    ],
+    "python.pythonPath": "/Applications/Autodesk/Maya2017/Maya.app/Contents/Frameworks/Python.framework/Versions/Current/Resources/Python.app/Contents/MacOS/Python",
+    "python.linting.enabled": false,
+}
