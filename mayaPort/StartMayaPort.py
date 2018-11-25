@@ -6,10 +6,17 @@
 # @Link   : ivan.cgartech.com
 # @Date   : 11/23/2018, 11:20:47 PM
 
-import maya.cmds as cmds
+import maya.cmds as cmds;
 
-# Open new ports
-
-cmds.commandPort(name=":7001", sourceType="mel", echoOutput=True)
-
-cmds.commandPort(name=":7002", sourceType="python", echoOutput=True)
+if not cmds.commandPort(':7001', q = True ):
+    cmds.commandPort(name=":7001", sourceType="mel", echoOutput=True)
+    cmds.warning('Mel port is open...')
+else:
+    cmds.commandPort(name = ':7001', cl = 1)
+    cmds.warning('Mel port is close...')
+if not cmds.commandPort(':7002', q = True):
+    cmds.commandPort(name=":7002", sourceType="python", echoOutput=True)
+    cmds.warning('Python port is open...')
+else:
+    cmds.commandPort(name = ':7002', cl = 1)
+    cmds.warning('Python port is close...')

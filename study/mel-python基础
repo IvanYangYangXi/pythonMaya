@@ -1,0 +1,75 @@
+Mel命令和Python命令之间的转换
+1. 创建命令
+    mel:
+        polyCube -ch on -o on -w 9.9 -h 7.1 -d 10 -cuv 4； // 注意大小写
+    python:
+        mc.polyCube（ch = 1，0 = 1，w = 9.9，h = 7.1，d = 10，cuv = 4）
+    
+
+    mel:
+        polySphere -ch on -o on -r 3；
+    python:
+        mc.polySphere（ch = 1，0 = 1，r = 3）
+
+    格式不同体现在一下几点：
+        有mc前缀（Mel没有前缀）
+        所有的参数信息需要放在主命令后的括号中（Mel没有括号）
+        参数名和它的值之间用等号隔开（Mel是用空格）
+        每个参数之间用逗号隔开（Mel用空格）
+        有些参数的值是1，而Mel是on
+        Mel的on也可以写成1，
+
+    还有一中转化形式：
+    我们如果在场景中选择了pCube1这个物体，会得到以下Mel命令：
+    mel：
+        select -r pCube1；
+
+    python:
+        mc.select（“pCube1”，r = 1） # 注意：Python中，选择对象放在最前面。
+
+    如果要同时选择pCube1和pSphere1的话，需要用到列表，如下：
+        
+        mc.select（[“pCube1”，“pSphere1”]） # 注意如果是选择集合的话，要用列表来表示
+
+2. 读取场景中信息的常用命令
+
+    2.1 得到所选物体的名字列表
+        mc.select（[“pCube1”，“pSphere”]） # 选择场景中的两个物体
+
+        mc.ls（sl = 1） # ls就是list的简写;sl = 1表示，我们要列出sl（select）的信息，“= 1”就是一个开关，我们打开了它
+
+        执行后，我们会从输出框中得到一个列表：[“pCube1”，“pSphere”]。
+
+    2.2 得到和设置物体的属性getAttr（）和setAttr（）
+        2.2.1 setAttr（）
+            选中刚才创建的pCube1，然后Ctrl+A打开属性窗口，找到pCube1节点中的Transform Attributes栏，我们把Translate行中的第一个值打成0，回车。
+            得到了一条Mel命令：
+
+                setAttr “pCube1.translateX” 0 ；
+
+            转成Python的命令：
+
+                mc.setAttr（“pCube1.translateX”，4） # 现学现用，我们把这个值再改成4
+
+        2.2.2 getAttr（）
+
+            mc.getAttr（“pCube1.translateX”） # 获取pCube1的translateX参数的值
+
+        2.2.3 询问开关q
+            xform命令来举例，如下：
+                
+                mc.select（“pCube1”）
+                mc.xform（q = 1，translation = 1）
+
+            执行结果，返回一个包含了pCube1的XYZ位置信息的列表。
+            其中，q = 1表示当前这个命令已经进入询问状态，改命令不会对所选的物体进行任何操作，只会询问；translation = 1，表示我们要询问的参数是translation，“= 1”相当于一个开关
+            假如，我们的命令是mc.xform（q = 1, translation = 1, rotation = 1），这样会出错，因为询问状态下，只返回一个参数的值。相反，如果 mc.xform（q = 1, translation = 1, rotation = 0），也就是把rotation改成0，返回结果仍然会正确。
+
+    2.3 Nodes信息
+
+        mc.objectType（“pCube1”） # objectType命令可以得到节点类型，实用推荐
+
+        执行后，得到结果：transform。说明pCube1这个节点是transform节点.
+
+3. 简单案例
+    http://blog.sina.com.cn/s/blog_86f13b120100s76i.html
