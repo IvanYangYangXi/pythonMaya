@@ -6,6 +6,7 @@
 # @Link   : ivan.cgartech.com
 # @Date   : 11/23/2018, 11:20:47 PM
 
+# VS Code
 import maya.cmds as cmds;
 
 if not cmds.commandPort(':7001', q = True ):
@@ -19,4 +20,13 @@ if not cmds.commandPort(':7002', q = True):
     cmds.warning('Python port is open...')
 else:
     cmds.commandPort(name = ':7002', cl = 1)
+    cmds.warning('Python port is close...')
+
+# PyCharm
+import maya.cmds as cmds
+if not cmds.commandPort(':7002', q=True):
+    cmds.commandPort(n=':7002')
+    cmds.warning('Python port is open...')
+else:
+    cmds.commandPort(n = ':7002', cl = 1)
     cmds.warning('Python port is close...')

@@ -7,11 +7,15 @@
 # @Date   : 11/25/2018, 4:48:19 PM
 
 
+
+
 import maya.cmds as cmds;
 import os
 
-
- 
+# # 临时添加环境变量
+# import sys
+# sys.path.append('E:\\YJL_2018\\pythonMaya\\study') 
+# print(sys.path) # sys.path 环境变量
 
 # 1 按钮和文字
 
