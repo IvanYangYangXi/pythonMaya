@@ -112,3 +112,4 @@ cmds.checkBox(label='value 2', align='left', v=v2, onCommand='v2=2', offCommand=
 cmds.checkBox(label='value 3', align='left', v=v3, onCommand='v3=3', offCommand='v3=0')
 cmds.button(label='CheckedValue', command='checkValueTest()')
 cmds.showWindow()
+
