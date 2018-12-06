@@ -10,12 +10,4 @@ import maya.mel as mel;
 import maya.cmds as cmds;
 
 
-cmds.window()
-cmds.shelfTabLayout( 'mainShelfTab', image='smallTrash.png', imageVisible=True )
-cmds.shelfLayout( 'Dynamics' )
-cmds.setParent( '..' )
-cmds.shelfLayout( 'Rendering' )
-cmds.setParent( '..' )
-cmds.shelfLayout( 'Animation' )
-cmds.setParent( '..' )
-cmds.showWindow()
+# test
