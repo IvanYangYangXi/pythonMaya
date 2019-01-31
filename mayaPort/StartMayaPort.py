@@ -24,9 +24,9 @@ else:
 
 # PyCharm
 import maya.cmds as cmds
-if not cmds.commandPort(':7002', q=True):
-    cmds.commandPort(n=':7002')
+if not cmds.commandPort(':4434', q=True):
+    cmds.commandPort(n=':4434')
     cmds.warning('Python port is open...')
 else:
-    cmds.commandPort(n = ':7002', cl = 1)
+    cmds.commandPort(n = ':4434', cl = 1)
     cmds.warning('Python port is close...')
