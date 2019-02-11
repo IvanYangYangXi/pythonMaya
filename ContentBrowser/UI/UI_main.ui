@@ -13,11 +13,11 @@
   <property name="mouseTracking">
    <bool>false</bool>
   </property>
-  <property name="tabletTracking">
-   <bool>false</bool>
-  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="tabletTracking" stdset="0">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="enabled">
@@ -30,9 +30,6 @@
     </sizepolicy>
    </property>
    <property name="mouseTracking">
-    <bool>false</bool>
-   </property>
-   <property name="tabletTracking">
     <bool>false</bool>
    </property>
    <property name="focusPolicy">
@@ -50,11 +47,14 @@
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
+   <property name="tabletTracking" stdset="0">
+    <bool>false</bool>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
-       <number>-1</number>
+       <number>6</number>
       </property>
       <property name="sizeConstraint">
        <enum>QLayout::SetDefaultConstraint</enum>
@@ -196,12 +196,12 @@
           </attribute>
           <column>
            <property name="text">
-            <string notr="true">1</string>
+            <string notr="true">AAA</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string notr="true">2</string>
+            <string notr="true">BBB</string>
            </property>
           </column>
           <item>
@@ -209,14 +209,14 @@
             <string>新建项目</string>
            </property>
            <property name="text">
-            <string/>
+            <string>aa</string>
            </property>
            <item>
             <property name="text">
              <string>新建子项目</string>
             </property>
             <property name="text">
-             <string/>
+             <string>sd</string>
             </property>
            </item>
           </item>
@@ -370,7 +370,7 @@
      <x>0</x>
      <y>0</y>
      <width>688</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
