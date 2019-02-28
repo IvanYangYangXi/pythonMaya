@@ -9,15 +9,15 @@
 import sqlite3
 
 
-conn = sqlite3.connect("sqlite.db") # 创建sqlite.db数据库
+conn = sqlite3.connect("./test.db") # 创建sqlite.db数据库
 conn.text_factory = str
 conn.execute("drop table IF EXISTS category") # 删除表
 conn.execute("drop table IF EXISTS book") # 删除表
 # 创建表
-conn.execute("""CREATE TABLE category
+conn.execute("""create table category
       (id int primary key, sort int, name text)""")
 
-query = """CREATE TABLE book
+query = """create table book
       (id int primary key, 
        sort int, 
        name text, 
